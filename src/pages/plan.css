@@ -1,0 +1,468 @@
+tspan {
+  white-space: pre;
+}
+.t0 {
+  font-size: 8px;
+  fill: #ffffff;
+  font-family: "Arial";
+}
+.s1 {
+  fill: #ffaaaa;
+}
+.s2 {
+  fill: none;
+  stroke: #ffaaaa;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s3 {
+  fill: none;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s4 {
+  fill: #dede87;
+}
+.s5 {
+  fill: none;
+  stroke: #dede87;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s6 {
+  fill: #6a6a6a;
+}
+.s7 {
+  fill: none;
+  stroke: #6a6a6a;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.9;
+}
+.t8 {
+  font-size: 16px;
+  fill: #a80f02;
+  font-family: "Arial";
+}
+.t9 {
+  font-size: 18px;
+  fill: #a80f02;
+  font-family: "Acad Nusx";
+}
+.t10 {
+  font-size: 18px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t11 {
+  font-size: 18px;
+  line-height: 2px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t12 {
+  font-size: 18px;
+  line-height: 28px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t13 {
+  font-size: 18px;
+  line-height: 26px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t14 {
+  font-size: 18px;
+  line-height: 21px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t15 {
+  font-size: 16px;
+  line-height: 21px;
+  fill: #a80f02;
+  font-family: "Arial";
+}
+.t16 {
+  font-size: 18px;
+  line-height: 21px;
+  fill: #a80f02;
+  font-family: "Acad Nusx";
+}
+.t17 {
+  font-size: 16px;
+  line-height: 21px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.s18 {
+  fill: #aad2ff;
+}
+.s19 {
+  fill: none;
+  stroke: #aad2ff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s20 {
+  fill: #ffcc99;
+}
+.s21 {
+  fill: none;
+  stroke: #ffcc99;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s22 {
+  fill: #7ac58e;
+}
+.s23 {
+  fill: none;
+  stroke: #7ac58e;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s24 {
+  opacity: 0.5;
+  fill: #ffd5aa;
+}
+.s25 {
+  fill: none;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+.s26 {
+  opacity: 0.5;
+  fill: #aaffd5;
+}
+.s27 {
+  opacity: 0.25;
+  fill: #ffd5aa;
+}
+.s28 {
+  opacity: 0.25;
+  fill: #aaffd5;
+}
+.s29 {
+  opacity: 0.5;
+  fill: #ffffff;
+}
+.s30 {
+  opacity: 0.5;
+  fill: #999999;
+}
+.s31 {
+  opacity: 0.5;
+  fill: #e8e8e8;
+}
+.s32 {
+  fill: #ffffff;
+}
+.t33 {
+  font-size: 19px;
+  line-height: 21px;
+  fill: #00bb5e;
+  font-family: "Arial";
+}
+.t34 {
+  font-size: 13px;
+  line-height: 21px;
+  fill: #00bb5e;
+  font-family: "Arial";
+}
+.t35 {
+  font-size: 13px;
+  line-height: 21px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t36 {
+  font-size: 9px;
+  line-height: 21px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t37 {
+  font-size: 13px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t38 {
+  font-size: 9px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.s39 {
+  fill: none;
+  stroke: #5e5eff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.5;
+}
+.s40 {
+  fill: none;
+  stroke: #71cebe;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.9;
+}
+.s41 {
+  fill: none;
+  stroke: #97cbff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s42 {
+  fill: none;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.s43 {
+  fill: none;
+  stroke: #6c80ff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.s44 {
+  fill: #78aaff;
+}
+.t45 {
+  font-size: 6px;
+  line-height: 0px;
+  fill: #78aaff;
+  font-family: "Arial";
+}
+.t46 {
+  font-size: 6px;
+  line-height: 7px;
+  fill: #78aaff;
+  font-family: "Arial";
+}
+.s47 {
+  fill: #aaaaaa;
+}
+.s48 {
+  fill: none;
+  stroke: #ff6600;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.s49 {
+  fill: none;
+  stroke: #ff6600;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+.s50 {
+  fill: none;
+  stroke: #a80f02;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.8;
+}
+.s51 {
+  fill: none;
+  stroke: #a80f02;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.s52 {
+  fill: none;
+  stroke: #a80f02;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+}
+.s53 {
+  fill: none;
+  stroke: #ff0000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s54 {
+  fill: none;
+  stroke: #7f7f7f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.t55 {
+  font-size: 8px;
+  line-height: 0px;
+  fill: #bdbdbd;
+  font-family: "Arial";
+}
+.s56 {
+  fill: none;
+  stroke: #800080;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.s57 {
+  fill: none;
+  stroke: #0000ff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s58 {
+  fill: #0000ff;
+}
+.t59 {
+  font-size: 14px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t60 {
+  font-size: 14px;
+  line-height: 19px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.s61 {
+  fill: #ffffff;
+  stroke: #000000;
+  stroke-miterlimit: 10;
+}
+.t62 {
+  font-size: 14px;
+  line-height: 17px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.s63 {
+  fill: none;
+  stroke: #004080;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.4;
+}
+.s64 {
+  fill: #004080;
+}
+.t65 {
+  font-size: 14px;
+  line-height: 17px;
+  fill: #004080;
+  font-family: "Arial";
+}
+.t66 {
+  font-size: 18px;
+  line-height: 17px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t67 {
+  font-size: 16px;
+  line-height: 17px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t68 {
+  font-size: 18px;
+  line-height: 17px;
+  fill: #df0000;
+  font-family: "Acad Nusx";
+}
+.t69 {
+  font-size: 18px;
+  line-height: 0px;
+  fill: #df0000;
+  font-family: "Acad Nusx";
+}
+.t70 {
+  font-size: 12px;
+  line-height: 0px;
+  fill: #df0000;
+  font-family: "Acad Nusx";
+}
+.t71 {
+  font-size: 18px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t72 {
+  font-size: 12px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t73 {
+  font-size: 18px;
+  line-height: 0px;
+  fill: #00bb5e;
+  font-family: "Acad Nusx";
+}
+.t74 {
+  font-size: 12px;
+  line-height: 0px;
+  fill: #00bb5e;
+  font-family: "Acad Nusx";
+}
+.t75 {
+  font-size: 16px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t76 {
+  font-size: 16px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t77 {
+  font-size: 11px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.t78 {
+  font-size: 39px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Arial";
+}
+.t79 {
+  font-size: 43px;
+  line-height: 0px;
+  fill: #000000;
+  font-family: "Acad Nusx";
+}
+.s80 {
+  fill: none;
+  stroke: #719d2f;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
+.s81 {
+  fill: none;
+  stroke: #808000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.7;
+}
