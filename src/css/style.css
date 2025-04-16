@@ -1341,3 +1341,209 @@ a:focus {
   font-size: 16px;
   color: #555;
 }
+
+@media (max-width: 900px) {
+  .hero_area {
+    background-size: 100% 100%!important;
+
+  }
+
+  .hero_area .container-fluid{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero_area .container-fluid *{
+
+  color: white!important;
+  border-color: white!important;
+}
+}
+
+@media (max-width: 768px) {
+  .client_section .client_container {
+    width: 95% !important;
+    margin: 0 auto !important;
+  }
+
+  .client_section .client_container .box {
+    padding-bottom: 45px !important;
+  }
+
+  .client_section .carousel-control-prev,
+  .client_section .carousel-control-next {
+    top: 100% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .client_section .carousel-control-prev {
+    left: calc(50% - 60px) !important;
+  }
+
+  .client_section .carousel-control-next {
+    right: calc(50% - 60px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .client_section .client_container #carouselExampleControls {
+    padding: 0 5% !important;
+  }
+
+  .client_section .client_container .box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .client_section .client_container .box .detail-box {
+    margin-top: 25px !important;
+  }
+
+  .client_section .client_container #carouselExampleControls::before {
+    content: "" !important;
+    position: absolute !important;
+    height: 165px !important;
+    left: 30% !important;
+    top: 43px !important;
+    width: 100px !important;
+    background: transparent !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .client_section .client_container #carouselExampleControls::before {
+    left: 20% !important;
+  }
+}
+.contact_section {
+  padding: 60px 20px;
+  background-color: #f7f7f7;
+}
+
+.contact_section .heading_container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact_section .heading_container h2 {
+  font-size: 2rem;
+  border-left: 7px solid #0f2480;
+  padding-left: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.map_container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-responsive {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.form_container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.form_container input,
+.form_container .message-box {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form_container input:focus,
+.form_container .message-box:focus {
+  border-color: #0f2480;
+}
+
+.form_container .message-box {
+  height: 120px;
+  resize: none;
+}
+
+.form_container button {
+  margin-top: 30px;
+  padding: 12px 32px;
+  border: none;
+  background-color: #f97616;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form_container button:hover {
+  background-color: #e96b0f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact_section .row {
+    flex-direction: column;
+  }
+
+  .form_container {
+    margin-top: 30px;
+    padding: 20px;
+  }
+
+  .map-responsive {
+    padding-top: 75%; /* taller map for mobile */
+  }
+
+  .form_container button {
+    width: 100%;
+  }
+
+  .contact_section .heading_container h2 {
+    font-size: 1.6rem;
+  }
+}
+.form_container input{
+  width: 100%!important;
+  border: 1px solid black!important;
+  padding-right: 100px!important;
+
+}
+
+.form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 0 0!important;
+}
+
+.d-flex{
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+}
+
+.contact_section button{
+  margin: 20px 0!important;
+}

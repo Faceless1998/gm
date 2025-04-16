@@ -1,4 +1,12 @@
-@media (max-width: 1120px) {}
+@media (max-width: 1000px) {
+  .navbar-nav{
+    display: none!important;
+  }
+
+  .custom_nav-container{
+display: block!important;
+  }
+}
 
 @media (max-width: 992px) {
   .navbar-nav,

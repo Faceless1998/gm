@@ -9,7 +9,7 @@ const MenuButton = styled.button`
   padding: 0;
   z-index: 1000;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: block;
     position: absolute;
     right: 20px;
@@ -48,7 +48,7 @@ const MenuButton = styled.button`
 const MenuOverlay = styled.div`
   display: none;
   
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     display: block;
     position: fixed;
     top: 0;
