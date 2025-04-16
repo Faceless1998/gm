@@ -20,14 +20,11 @@ import BlockB from "./../assets/building.jpg";
 import BlockC from "./../assets/building1.jpeg";
 import Square from "./../assets/square.png";
 import AboutImg from "./../assets/about-img.jpg";
-import D1 from "./../assets/d-1.jpg";
-import D2 from "./../assets/d-2.jpg";
 import U1 from "./../assets/U1.png";
 import U2 from "./../assets/U2.png";
 import U3 from "./../assets/U3.png";
 import U4 from "./../assets/U4.png";
 import ClientImg from "./../assets/client.jpg";
-import { BrowserView, MobileView } from "react-device-detect";
 import { DesignCards } from "./DesignCards .js";
 
 const Main = () => {
@@ -54,7 +51,6 @@ const Main = () => {
 
   return (
     <>
-      <BrowserView>
         <style
           dangerouslySetInnerHTML={{
             __html:
@@ -910,178 +906,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-      </BrowserView>
-      <MobileView>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-        .mobile-header {
-          background-color: #1164c3;
-          padding: 10px 20px;
-          position: fixed;
-          width: 100%;
-          top: 0;
-          left: 0;
-          z-index: 1000;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
 
-        .mobile-logo img {
-          height: 40px;
-          width: auto;
-        }
-
-        .burger-menu {
-          background: none;
-          border: none;
-          padding: 10px;
-          cursor: pointer;
-          z-index: 1001;
-        }
-
-        .burger-menu span {
-          display: block;
-          width: 25px;
-          height: 3px;
-          background-color: white;
-          margin: 5px 0;
-          transition: 0.4s;
-        }
-
-        .overlay {
-          height: 100%;
-          width: 0;
-          position: fixed;
-          z-index: 999;
-          top: 0;
-          left: 0;
-          background-color: rgba(17, 100, 195, 0.95);
-          overflow-x: hidden;
-          transition: 0.5s;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .overlay.active {
-          width: 100%;
-        }
-
-        .burger-menu.active span:nth-child(1) {
-          transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .burger-menu.active span:nth-child(2) {
-          opacity: 0;
-        }
-
-        .burger-menu.active span:nth-child(3) {
-          transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        .overlay-content {
-          text-align: center;
-          padding: 20px;
-        }
-
-        .overlay-content a {
-          padding: 15px;
-          text-decoration: none;
-          font-size: 24px;
-          color: white;
-          display: block;
-          transition: 0.3s;
-          margin: 10px 0;
-        }
-
-        .overlay-content a:hover {
-          color: #e3c729;
-          transform: scale(1.1);
-        }
-        `,
-          }}
-        />
-        <div className="mobile-header">
-          <a className="mobile-logo" href="#home">
-            <img src={Logo} alt="Logo" />
-          </a>
-          <button
-            className="burger-menu"
-            onClick={() => {
-              const overlay = document.querySelector(".overlay");
-              const burgerMenu = document.querySelector(".burger-menu");
-              if (overlay.classList.contains("active")) {
-                overlay.classList.remove("active");
-                burgerMenu.classList.remove("active");
-              } else {
-                overlay.classList.add("active");
-                burgerMenu.classList.add("active");
-              }
-            }}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-
-        <div className="overlay">
-          <div className="overlay-content">
-            <a
-              href="#home"
-              onClick={() =>
-                document.querySelector(".overlay").classList.remove("active")
-              }
-            >
-              HOME
-            </a>
-            <a
-              href="#listing"
-              onClick={() =>
-                document.querySelector(".overlay").classList.remove("active")
-              }
-            >
-              LISTING
-            </a>
-            <a
-              href="#house"
-              onClick={() =>
-                document.querySelector(".overlay").classList.remove("active")
-              }
-            >
-              BLOCKS
-            </a>
-            <a
-              href="#about"
-              onClick={() =>
-                document.querySelector(".overlay").classList.remove("active")
-              }
-            >
-              ABOUT
-            </a>
-            <a
-              href="#price"
-              onClick={() =>
-                document.querySelector(".overlay").classList.remove("active")
-              }
-            >
-              PRICING
-            </a>
-            <a
-              href="#contact"
-              onClick={() =>
-                document.querySelector(".overlay").classList.remove("active")
-              }
-            >
-              CONTACT US
-            </a>
-          </div>
-        </div>
-
-        {/* Rest of the mobile content */}
-      </MobileView>
     </>
   );
 };
