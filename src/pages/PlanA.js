@@ -1,47 +1,57 @@
 import React, { useEffect, useRef, useState } from "react";
-import PlanImage from "./../assets/2.jpg";
-import axios from "axios"; // Import axios
+import PlanImage from "./../assets/1.jpg";
+import axios from "axios";
+import apartmentsA from "./Apartments";
 import { useLocation } from "react-router-dom";
 import "./plan.css";
-import apartments from "./Apartments";
 
-const Plan = () => {
-  const [apartments, setApartments] = useState([]); // State to store apartments
+const PlanA = () => {
+  const [fetchedApartments, setFetchedApartments] = useState([]);
   const [positions, setPositions] = useState({});
+  const [loading, setLoading] = useState(true);
   const pathRefs = useRef({});
   const location = useLocation();
   const { floorNumber, block } = location.state || {};
 
-  console.log("Floor:", floorNumber, "Block:", block);
-
-  // Fetch apartment data from backend
+  // Fetch apartments from backend
   useEffect(() => {
     const fetchApartments = async () => {
       try {
-        const response = await axios.get("/api/apartments"); // Assuming your API endpoint is "/api/apartments"
-        setApartments(response.data);
+        const response = await axios.get("http://localhost:5000/apartments");
+        setFetchedApartments(response.data);
       } catch (error) {
         console.error("Error fetching apartments:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchApartments();
   }, []);
 
+  // Calculate tooltip positions after apartments are rendered
   useEffect(() => {
     const newPositions = {};
-    apartments.forEach(({ _id, d }) => {
-      const node = pathRefs.current[_id];
+    apartmentsA.forEach(({ id }) => {
+      const node = pathRefs.current[id];
       if (node) {
         const bbox = node.getBBox();
-        newPositions[_id] = {
+        newPositions[id] = {
           x: bbox.x + bbox.width / 2,
           y: bbox.y + bbox.height / 2,
         };
       }
     });
     setPositions(newPositions);
-  }, [apartments]); // Trigger whenever apartments data changes
+  }, [fetchedApartments]);
+
+  if (loading) {
+    return (
+      <div style={{ marginTop: "100px", textAlign: "center" }}>
+        Loading floor plan...
+      </div>
+    );
+  }
 
   if (!block || !floorNumber) {
     return <div>Missing block or floor number</div>;
@@ -76,28 +86,45 @@ const Plan = () => {
 
         <g id="Layer 1">
           <use href="#img1" transform="matrix(1,0,0,1,0,0)" />
-          {apartments.map(({ _id, d, area }) => {
-            const apartname = `${block}-${floorNumber}${String(_id).padStart(
+          {apartmentsA.map(({ id, d }) => {
+            const apartname = `${block}-${floorNumber}${String(id).padStart(
               2,
               "0"
             )}`;
+
+            const fetchedApartment = fetchedApartments.find(
+              (apt) => apt.apartmentNumber === apartname
+            );
+
+            const apartmentStatus = fetchedApartment
+              ? fetchedApartment.status
+              : "active";
+            const area = fetchedApartment?.squareMeter || "-";
+
+            const hoverClass =
+              apartmentStatus === "sold"
+                ? "sold"
+                : apartmentStatus === "reserved"
+                ? "reserved"
+                : "active";
+
             return (
               <a
-                key={_id}
-                href={`/apartment/${_id}`}
+                key={id}
+                href={`/apartment/${apartname}`}
                 aria-label={`Apartment ${apartname}`}
                 className="posicon"
               >
                 <path
-                  ref={(el) => (pathRefs.current[_id] = el)}
-                  className="clickable"
+                  ref={(el) => (pathRefs.current[id] = el)}
+                  className={`clickable ${hoverClass}`}
                   d={d}
                 />
-                {positions[_id] && (
+                {positions[id] && (
                   <g
                     className="info-group"
-                    transform={`translate(${positions[_id].x - 50}, ${
-                      positions[_id].y - 50
+                    transform={`translate(${positions[id].x - 50}, ${
+                      positions[id].y - 50
                     })`}
                   >
                     <g className="hover-shift">
@@ -122,9 +149,21 @@ const Plan = () => {
                         y="0"
                         textAnchor="middle"
                       >
-                        {area}
+                        {area} m²
                       </text>
                     </g>
+
+                    {apartmentStatus !== "active" && (
+                      <text
+                        x="0"
+                        y="0"
+                        textAnchor="middle"
+                        transform="rotate(-30)"
+                        className={`watermark ${apartmentStatus}`}
+                      >
+                        {apartmentStatus.toUpperCase()}
+                      </text>
+                    )}
                   </g>
                 )}
               </a>
@@ -136,4 +175,4 @@ const Plan = () => {
   );
 };
 
-export default Plan;
+export default PlanA;

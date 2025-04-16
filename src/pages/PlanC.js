@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import PlanImage from "./../assets/1.jpg";
+import PlanImage from "./../assets/2.jpg";
 import axios from "axios";
 import apartmentsA from "./Apartments";
 import { useLocation } from "react-router-dom";
 import "./plan.css";
 
-const Plan = () => {
+const PlanC = () => {
   const [fetchedApartments, setFetchedApartments] = useState([]);
   const [positions, setPositions] = useState({});
   const [loading, setLoading] = useState(true);
@@ -165,4 +165,4 @@ const Plan = () => {
   );
 };
 
-export default Plan;
+export default PlanC;

@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import PlanImage from "./../assets/1.jpg";
+import PlanImage from "./../assets/2.jpg";
 import axios from "axios";
-import apartmentsA from "./Apartments";
+import apartmentsB from "./ApartmentsB";
 import { useLocation } from "react-router-dom";
 import "./plan.css";
 
-const Plan = () => {
+const PlanB = () => {
   const [fetchedApartments, setFetchedApartments] = useState([]);
   const [positions, setPositions] = useState({});
   const [loading, setLoading] = useState(true);
@@ -32,7 +32,7 @@ const Plan = () => {
   // Calculate tooltip positions after apartments are rendered
   useEffect(() => {
     const newPositions = {};
-    apartmentsA.forEach(({ id }) => {
+    apartmentsB.forEach(({ id }) => {
       const node = pathRefs.current[id];
       if (node) {
         const bbox = node.getBBox();
@@ -63,26 +63,21 @@ const Plan = () => {
         overflow: "hidden",
       }}
     >
-      <svg
+        <svg
         version="1.2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2185 1282"
-        width="100%"
-        height="auto"
-        style={{
-          borderRadius: "12px",
-          background: "#f9f9f9",
-          overflow: "visible",
-          position: "relative",
-        }}
-      >
+        width={2185}
+        height={1282}
+        >
+        <title>3</title>
         <defs>
-          <image width={2185} height={1282} id="img1" href={PlanImage} />
+            <image width={2185} height={1282} id="img1" href={PlanImage} />
         </defs>
 
         <g id="Layer 1">
           <use href="#img1" transform="matrix(1,0,0,1,0,0)" />
-          {apartmentsA.map(({ id, d }) => {
+          {apartmentsB.map(({ id, d }) => {
             const apartname = `${block}-${floorNumber}${String(id).padStart(2, "0")}`;
 
             const fetchedApartment = fetchedApartments.find(
@@ -102,7 +97,7 @@ const Plan = () => {
                 return (
                   <a
                     key={id}
-                    href={`/apartment/${id}`}
+                    href={`/apartment/${apartname}`}
                     aria-label={`Apartment ${apartname}`}
                     className="posicon"
                   >
@@ -165,4 +160,8 @@ const Plan = () => {
   );
 };
 
-export default Plan;
+export default PlanB;
+
+
+{/*
+*/}

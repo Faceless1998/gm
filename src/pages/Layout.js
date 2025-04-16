@@ -13,48 +13,48 @@ const Layout = () => {
             </a> */}
             <MobileMenu
               links={[
-                { href: "#home", text: "HOME" },
-                { href: "#listing", text: "LISTING" },
-                { href: "#house", text: "BLOCKS" },
-                { href: "#about", text: "ABOUT" },
-                { href: "#price", text: "PRICING" },
-                { href: "#contact", text: "CONTACT US" },
+                { href: "/#home", text: "HOME" },
+                { href: "/#listing", text: "LISTING" },
+                { href: "/#house", text: "BLOCKS" },
+                { href: "/#about", text: "ABOUT" },
+                { href: "/#price", text: "PRICING" },
+                { href: "/#contact", text: "CONTACT US" },
               ]}
             />
 
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#home">
+                <a className="nav-link" href="/#home">
                   HOME
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#listing">
+                <a className="nav-link" href="/#listing">
                   Listing
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#house">
+                <a className="nav-link" href="/#house">
                   Blocks
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#about">
+                <a className="nav-link" href="/#about">
                   ABOUT
                 </a>
               </li>
               <li>
-                <a className="navbar-brand" href="#home">
+                <a className="navbar-brand" href="/#home">
                   <img src={Logo} alt="" />
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#price">
+                <a className="nav-link" href="/#price">
                   PRICING
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#contact">
+                <a className="nav-link" href="/#contact">
                   CONTACT US
                 </a>
               </li>

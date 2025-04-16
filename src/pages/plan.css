@@ -1,0 +1,95 @@
+.clickable {
+    fill: rgba(255, 255, 255, 0.2);
+    stroke: #0000ff;
+    stroke-width: 1;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+  }
+
+  .clickable:hover {
+    fill: #ffe066;
+  }
+
+  .info-group {
+    transition: transform 0.4s ease-in-out;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .hover-shift {
+    transition: transform 0.4s ease-in-out;
+  }
+
+  a:hover .hover-shift {
+    transform: translate(40px, 40px);
+  }
+
+  .info-bg {
+    fill: #3399ff;
+    stroke: white;
+    stroke-width: 1;
+    rx: 6;
+    ry: 6;
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.2));
+  }
+
+  .info-text {
+    fill: white;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .area-text {
+    fill: white;
+    font-size: 13px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+
+  .posicon {
+    position: relative;
+  }
+
+  /* Default hover for active apartments */
+.clickable.active:hover {
+    fill: green; /* Or any color for active */
+    cursor: pointer;
+  }
+  
+  /* Hover effect for sold apartments */
+  .clickable.sold{
+    fill: rgba(255, 0, 0, 0.5);
+    cursor: not-allowed; /* You may want to indicate it's sold */
+    opacity: 0.6; /* Reduce opacity for sold */
+  }
+  
+  /* Hover effect for reserved apartments */
+  .clickable.reserved {
+    fill: rgba(255, 255, 0, 0.5);  /* Or any color for reserved */
+    cursor: not-allowed; /* You may want to indicate it's reserved */
+    opacity: 0.8; /* Adjust opacity for reserved */
+    
+  }
+  
+
+  .watermark {
+    font-size: 70px;
+    font-weight: bold;
+    fill: rgba(255, 0, 0, 1);
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .watermark.reserved {
+    fill: rgba(0, 0, 0, 0.3); /* orange-ish */
+    font-size: 30px;
+    transform: translate(50px, 50px) rotate(-30deg);
+
+
+  }
+  
+  .watermark.sold {
+    fill: rgba(0, 0, 0, 0.3); /* red-ish */
+    transform: translate(50px, 50px) rotate(-30deg);
+  }
+  

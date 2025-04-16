@@ -1,120 +1,85 @@
-import React, { useState, useEffect } from 'react';
-import Logo from "./../assets/logo.png";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import "./Apartment.css";
 
 const Apartment = () => {
-    
-  const [index, setIndex] = useState(0);
-  const totalSlides = 4;
+  const { apartmentNumber } = useParams();
+  const [apartmentData, setApartmentData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const imageUrls = [
+    "https://placehold.co/800x500/31353b/ffffff?text=Living+Room",
+    "https://placehold.co/800x500/3b3f46/ffffff?text=Bedroom",
+    "https://placehold.co/800x500/2e3136/ffffff?text=Kitchen",
+    "https://placehold.co/800x500/4a4f56/ffffff?text=Bathroom",
+  ];
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000);
-    return () => clearInterval(interval); // Clear the interval on component unmount
-  }, []);
+    if (!apartmentNumber) return;
 
-  const updateSlider = () => {
-    const slider = document.querySelector(".slider");
-    if (slider) {
-      slider.style.transform = `translateX(-${index * 500}px)`; // Adjust the width as needed
-    }
+    const fetchApartment = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/apartments/${apartmentNumber}`);
+        setApartmentData(response.data);
+      } catch (error) {
+        console.error("Error fetching apartment data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchApartment();
+  }, [apartmentNumber]);
+
+  const handleNext = () => {
+    setCurrentImage((prev) => (prev + 1) % imageUrls.length);
   };
 
-  const nextSlide = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    updateSlider();
+  const handlePrev = () => {
+    setCurrentImage((prev) => (prev - 1 + imageUrls.length) % imageUrls.length);
   };
 
-  const prevSlide = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
-    updateSlider();
+  const calculateTotalPrice = () => {
+    return apartmentData ? apartmentData.price * apartmentData.squareMeter : 0;
   };
 
-  // Call updateSlider whenever the index changes
-  useEffect(() => {
-    updateSlider();
-  }, [index]);
+  if (loading) return <div className="loading">Loading...</div>;
+  if (!apartmentData) return <div className="not-found">Apartment not found.</div>;
 
   return (
-    <div>
-        <style
-    dangerouslySetInnerHTML={{
-      __html:
-        "\n      /* Custom Scrollbar Styles */\n      ::-webkit-scrollbar {\n        width: 16px;\n        height: 16px;\n      }\n\n      ::-webkit-scrollbar-track {\n        background-color: #f1f1f1;\n        border-radius: 8px;\n        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);\n      }\n\n      ::-webkit-scrollbar-thumb {\n        background-color: #3115e7;\n        border-radius: 8px;\n        border: 4px solid #f1f1f1;\n        transition: background-color 0.3s ease;\n      }\n\n      ::-webkit-scrollbar-thumb:hover {\n        background-color: #e3c729;\n      }\n\n      ::-webkit-scrollbar-horizontal {\n        height: 16px;\n      }\n\n      body {\n        margin: 0;\n        padding: 0;\n        background-color: #f4f4f4;\n      }\n\n      .header_section {\n        background-color: rgba(\n          161,\n          189,\n          221,\n          0.1\n        ); /* Almost fully transparent */\n        padding: 5px 0;\n        width: 100%;\n        position: fixed;\n        top: 0;\n        left: 0;\n        z-index: 1000;\n        transition: background-color 0.3s ease-in-out;\n      }\n\n      .header_section.scrolled {\n        background-color: #1164c3; /* Solid color after scrolling */\n      }\n\n      .navbar {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n        padding: 0 20px;\n      }\n\n      .navbar-brand img {\n        height: 40px;\n        width: 125px;\n      }\n\n      .navbar-nav {\n        display: flex;\n        gap: 20px;\n        list-style: none;\n        padding: 0;\n        margin: 0;\n      }\n\n      .nav-item a {\n        text-decoration: none;\n        color: white;\n        font-size: 16px;\n        font-weight: bold;\n        transition: transform 0.3s ease, padding 0.3s ease;\n      }\n\n      .nav-item a:hover {\n        transform: scale(1.1);\n        padding: 12px 24px;\n      }\n\n      .User_option {\n        display: flex;\n        gap: 15px;\n        margin-left: auto;\n      }\n\n      .User_option a {\n        padding: 10px 20px;\n        border-radius: 5px;\n        text-decoration: none;\n        font-weight: bold;\n        transition: transform 0.3s ease, padding 0.3s ease;\n      }\n\n      .User_option a:first-child {\n        background-color: transparent;\n        border: 2px solid white;\n        color: white;\n      }\n\n      .User_option a:last-child {\n        background-color: #ff9800;\n        color: white;\n      }\n    "
-    }}
-  />
-      {/* <header className="header_section">
-        <div className="container-fluid">
-          <nav className="navbar navbar-expand-lg custom_nav-container">
-            <a className="navbar-brand" href="/">
-              <img src={Logo} alt="" />
-            </a>
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  HOME
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/#house">
-                  Blocks
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/Block">
-                  Floors
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/Plan">
-                 Plan
-                </a>
-              </li>
-            </ul>
-          </nav>
+    <div className="apartment-wrapper">
+      {/* Image Slider */}
+      <div className="slider-box">
+        <img src={imageUrls[currentImage]} alt="Apartment" className="slider-image" />
+        <div className="slider-controls">
+          <button onClick={handlePrev}>&#10094;</button>
+          <button onClick={handleNext}>&#10095;</button>
         </div>
-      </header> */}
+      </div>
 
-      <div className="container">
-        <div className="top-section">
-          <div className="slider-container">
-            <button className="arrow arrow-left" onClick={prevSlide}>
-              ◁
-            </button>
-            <div className="slider">
-              <div className="slide">Placeholder for Image {index + 1}</div>
-              <div className="slide">Placeholder for Image {index + 2}</div>
-              <div className="slide">Placeholder for Image {index + 3}</div>
-              <div className="slide">Placeholder for Image {index + 4}</div>
-            </div>
-            <button className="arrow arrow-right" onClick={nextSlide}>
-              ▷
-            </button>
+      {/* Apartment Details */}
+      <div className="apartment-card">
+        <div className="info-block">
+          <h2 className="apartment-title">Apartment {apartmentData.apartmentNumber}</h2>
+          <div className="price">
+            <h3>Price per m²: <span>${apartmentData.price}</span></h3>
+            <h3>Total Price: <span>${calculateTotalPrice()}</span></h3>
           </div>
-          <div className="highlight-box">
-          <iframe
-              width="100%"
-              height="350"
-              src="https://www.youtube.com/embed/sm-iS9hnyG8"
-              title="Apartment Video Tour"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <ul className="apartment-info">
+            <li><strong>Size:</strong> {apartmentData.squareMeter} m²</li>
+            <li><strong>Status:</strong> <span className={`status ${apartmentData.status}`}>{apartmentData.status}</span></li>
+          </ul>
         </div>
-        <div className="details">
-          <div className="info">
-            <h3>Apartment Details</h3>
-            <p>Location: New York, NY</p>
-            <p>Price: $50,000</p>
-            <p>Size: 1200 sqft</p>
-            <p>Rooms: 3</p>
-          </div>
-          <div className="creative">
-            <h3>Did You Know?</h3>
-            <p>This apartment has a rooftop garden with a stunning skyline view!</p>
-          </div>
+
+        {/* Action Section */}
+        <div className="action-block">
+          <h3>Your Dream Apartment Awaits</h3>
+          <p>Modern, comfortable, and stylish living — tailored to your lifestyle.</p>
+          <button className="btn primary">Book a Viewing</button>
+          <button className="btn secondary">Contact Agent</button>
         </div>
-        <button className="contact-btn">Contact Seller</button>
       </div>
     </div>
   );
